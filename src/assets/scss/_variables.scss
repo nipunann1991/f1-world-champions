@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+ 
+/// Main brand colours
+$black: #171717;
+$base-color: #3b3e3f;
+$light-gray: #c3c3c3; 
+$lighter-gray: #f2f5f7;
+$red: #e41b4d;
+$white: #ffffff; 
+$winner-active: #fbfee2;
+
+
+///font sizes
+$base-font-size: 1.4rem;
+$logo-font-size: 3rem;
+ 
+
+/// Breakpoints
+$small-device: 320px; 
+$medium-device: 480px; 
+$tablet: 768px;
+$tablet-medium: 992px;
+$x-small-desktop: 1024px;
+$small-desktop: 1280px;
+$medium-desktop: 1440px;
+$large-desktop: 1600px; 
+
+/// Relative or absolute URL where all assets are served from
+$base-url: '../' !default;
+

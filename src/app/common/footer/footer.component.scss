@@ -1,0 +1,14 @@
+@import "/src/styles";
+
+footer.footer{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background: $black;
+    color: $white;
+
+    .footer-inner{
+        p{
+            text-align: center;
+        }
+    }
+}

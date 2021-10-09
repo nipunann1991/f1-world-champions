@@ -1,0 +1,15 @@
+@import "/src/styles";
+
+header.header{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: #000; 
+
+    a.logo{
+         @include flex();
+
+        img{
+            width: 15rem;
+        }
+    }
+}

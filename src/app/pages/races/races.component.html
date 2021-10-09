@@ -1,0 +1,49 @@
+<div class="races-results"> 
+    <table *ngIf="seasonRacesList.length > 0">
+        <tr>
+            <th>Round</th>
+            <th>Season</th>
+            <th>Race Name</th>
+            <th>Location</th>
+            <th></th>
+        </tr> 
+        <tr *ngFor="let race of seasonRacesList; let i = index" 
+            class="cursor-pointer" 
+            [ngClass]="{'winner' : worldChampion?.code == race.Results[0].Driver.code}" 
+            (click)="getWinnersByRound(i)">
+            <td>{{race.round}}</td>
+            <td>{{race.season}}</td>
+            <td>{{race.raceName}}</td>
+            <td>{{race.Circuit.Location.locality}} - {{race.Circuit.Location.country}}</td>
+            <td class="center-item"><a href="javascript:void(0)" (click)="getWinnersByRound(i)">Winners</a></td>
+        </tr> 
+    </table> 
+    <p class="loading-text text-center" *ngIf="seasonRacesList.length == 0">Loading...</p>
+</div> 
+<div class="modal-box-wrapper" [ngClass]="{'open': openModalBox}">
+     <div class="modal-box">
+         <div class="modal-title">
+             <h2 *ngIf="winnersList && !isDataLoading">Winners 
+                <em class="race-name"> - {{winnersList?.raceName}}</em> 
+                <span class="additional-info">Season: {{ winnersList.season }} Round: {{ winnersList.round }}</span>
+            </h2> 
+            <a href="javascript:void" class="close-btn" (click)="closeModalBox()">Close</a>
+         </div>
+        <div class="modal-content" [ngClass]="{'loading': isDataLoading}">
+            <table *ngIf="winnersList && !isDataLoading">
+                <tr>
+                    <th>Position</th>
+                    <th>Winner</th> 
+                    <th>Points</th> 
+                </tr> 
+                <tr *ngFor="let winner of winnersList?.Results" >
+                    <td>{{winner.position}}</td>
+                    <td>{{winner.Driver.givenName}} {{winner.Driver.familyName}}</td> 
+                    <td>{{winner.points}}</td>
+                </tr> 
+            </table>  
+            <p class="loading-text" *ngIf="!winnersList || isDataLoading ">Loading...</p>
+        </div> 
+     </div>
+</div>
+

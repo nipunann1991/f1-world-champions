@@ -1,0 +1,20 @@
+<div class="container-fluid page-wrapper">
+    <div class="container page">
+        <h1>F1 world champions</h1> 
+        <div class="seasons-box-wrapper">
+            <div class="season-info">
+                <h2>Season</h2>
+                <form class="season-form">
+                    <select class="season" name="season" (change)="selectedYear($event)">
+                        <option *ngFor="let year of champYearList" [value]="year" [selected]="currentYear == year">{{year}}</option> 
+                    </select>
+                </form> 
+            </div>
+            <div *ngIf="seasonRacesList" class="winner-info">
+                <h3>World Champion</h3>
+                <p>{{WorldChampionName}}</p>
+            </div> 
+        </div> 
+        <app-races [seasonRacesList]="seasonRacesList" ></app-races> 
+    </div>
+</div>

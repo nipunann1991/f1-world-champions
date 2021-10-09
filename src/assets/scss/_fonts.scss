@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;500;700;900&display=swap');
+
+/// Code (monospace) font family
+$base-font: 'Noto Sans Display', sans-serif;
+
+
+/// Font weights
+@mixin normal-font{
+    font-family: $base-font;
+    font-weight: 400;
+}
+
+@mixin medium-font{
+    font-family: $base-font;
+    font-weight: 500;
+}
+
+@mixin semibold-font {
+    font-family: $base-font;
+    font-weight: 700;
+}
+
+@mixin bold-font {
+    font-family: $base-font;
+    font-weight: 900;
+}
